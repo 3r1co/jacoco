@@ -1,6 +1,6 @@
-FROM dockerhub.gemalto.com/gemalto/alpine.java.tomee:7.0.2-alpine-3.5
+FROM tomee:7-jre-1.7.4-plus
 
-USER trent
-COPY target/jacoco-example ${CATALINA_WEBAPPS}/ROOT/
+RUN rm -rf /usr/local/tomee/webapps/ROOT/*
 
-USER bob
+COPY target/jacoco-example.war /usr/local/tomee/webapps/
+

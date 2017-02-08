@@ -16,37 +16,48 @@
  * specific language governing permissions and limitations
  * under the License.
 */
-package org.apache.myfaces.blank;
+package org.superbiz.jsf;
 
-/**
- * A typical simple backing bean, that is backed to <code>helloworld.jsp</code>
- * 
- */
-public class HelloWorldController {
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
-    
-    //properties
-    private String name;
-    
-    /**
-     * default empty constructor
-     */
-    public HelloWorldController(){
+@RequestScoped
+@Named
+public class CalculatorBean {
+
+    @Inject
+    Calculator calculator;
+    private double x;
+    private double y;
+    private double result;
+
+    public double getX() {
+        return x;
     }
-    
-    //-------------------getter & setter
-    public String getName() {
-        return name;
+
+    public void setX(double x) {
+        this.x = x;
     }
-    public void setName(String name) {
-        this.name = name;
+
+    public double getY() {
+        return y;
     }
-    
-    /**
-     * Method that is backed to a submit button of a form.
-     */
-    public String send(){
-        //do real logic, return a string which will be used for the navigation system of JSF
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public double getResult() {
+        return result;
+    }
+
+    public void setResult(double result) {
+        this.result = result;
+    }
+
+    public String add() {
+        result = calculator.add(x, y);
         return "success";
     }
 }
