@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.gemalto.forge</groupId>
+    <groupId>com.3r1c.example</groupId>
     <artifactId>jacoco-example</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -13,6 +13,14 @@
 
     <build>
         <finalName>jacoco-example</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.8</version>
+            </plugin>
+        </plugins>
     </build>
 
     <!-- Project dependencies -->
@@ -65,6 +73,7 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+
 
     </dependencies>
 
