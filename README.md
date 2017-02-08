@@ -11,9 +11,10 @@ In this little example I present you how to easily run code coverage analysis fo
    docker-compose up -d
    ```
 4. Access the sample application under http://localhost:8888. Do some math calculations to see the analysis work.
-5. Connect to the maven container:
+5. Connect to the maven container and change to /app:
     ```
     docker exec -it jacoco_maven_1 bash
+    bash-4.3# cd /app
     ```
 6. Fetch the JaCoCo Dump:
     ```
