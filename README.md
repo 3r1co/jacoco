@@ -4,6 +4,12 @@ In this little example I present you how to easily run code coverage analysis fo
 
 ## How To Run
 
+1. Compile the project with Maven first, as the class files need to be available for the Code Coverage Analysis:
+
+   ```
+   mvn clean package
+   ```
+   
 1. Download the Jacoco Agent from [here](http://search.maven.org/remotecontent?filepath=org/jacoco/jacoco/0.7.9/jacoco-0.7.9.zip).
 1. Place it in the root of the repository (as it is linked in the docker-compose.yml)
 1. Start the docker-compose stack.
